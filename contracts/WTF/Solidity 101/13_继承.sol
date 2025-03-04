@@ -74,9 +74,9 @@ contract C is A {
 
 // 构造函数继承
 contract AA {
-    uint public a;
+    uint256 public a;
 
-    constructor(uint _a) {
+    constructor(uint256 _a) {
         a = _a;
     }
 }
@@ -88,7 +88,7 @@ contract BB is AA(100) {
 
 // 方式二：在子合约的构造函数中声明父合约构造函数的参数
 contract CC is AA {
-    uint public c;
+    uint256 public c;
 
     constructor(uint256 _c) AA(200) {
         c = _c;

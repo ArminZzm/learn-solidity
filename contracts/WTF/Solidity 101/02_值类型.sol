@@ -14,7 +14,7 @@ contract ValueTypes {
 
     // 整型
     int public _int = -1; // 整数，包括负数
-    uint public _uint = 1; // 无符号整数
+    uint256 public _uint = 1; // 无符号整数
     uint256 public _number = 20220330; // 256位无符号整数
 
     // 整数运算

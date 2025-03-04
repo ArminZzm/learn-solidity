@@ -3,24 +3,24 @@ pragma solidity ^0.8.0;
 
 contract DataStorage {
     function fCallData(
-        uint[] calldata _x
-    ) public pure returns (uint[] calldata) {
+        uint256[] calldata _x
+    ) public pure returns (uint256[] calldata) {
         // 参数为calldata数组，不能被修改
         // _x[0] = 0 // 这样修改会报错
         return (_x);
     }
 
-    uint[] x = [1, 2, 3]; // 状态变量：数组 x
+    uint256[] x = [1, 2, 3]; // 状态变量：数组 x
 
     function fStorage() public {
         // 声明一个storage的变量 xStorage，指向x。修改xStorage也会影响x
-        uint[] storage xStorage = x;
+        uint256[] storage xStorage = x;
         xStorage[0] = 100;
     }
 
     // 状态变量
-    uint public x_ = 1;
-    uint public y;
+    uint256 public x_ = 1;
+    uint256 public y;
     string public z;
 
     function foo() external {
@@ -30,23 +30,23 @@ contract DataStorage {
     }
 
     // 局部变量
-    function bar() external pure returns (uint) {
-        uint xx = 1;
-        uint yy = 3;
-        uint zz = xx + yy;
+    function bar() external pure returns (uint256) {
+        uint256 xx = 1;
+        uint256 yy = 3;
+        uint256 zz = xx + yy;
         return zz;
     }
 
     // 全局变量
-    function global() external view returns(address,uint,bytes memory) {
+    function global() external view returns(address,uint256,bytes memory) {
         address sender = msg.sender;
-        uint blockNum = block.number;
+        uint256 blockNum = block.number;
         bytes memory data = msg.data;
         return(sender,blockNum,data);
     }
 
     // 全局变量-以太单位
-    function weiUint() external pure returns(uint) {
+    function weiUint() external pure returns(uint256) {
         assert(1 wei == 1e0);
         assert(1 wei == 1);
         return 1 wei;

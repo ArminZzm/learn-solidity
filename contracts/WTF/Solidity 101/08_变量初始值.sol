@@ -5,8 +5,8 @@ contract InitialValue {
     // 值类型初始值
     bool public _bool; // false
     string public _string; // ""
-    int public _int; // 0
-    uint public _uint; // 0
+    int256 public _int; // 0
+    uint256 public _uint; // 0
     address public _address; // address(0)
 
     enum ActionSet {
@@ -22,10 +22,10 @@ contract InitialValue {
 
     // 引用类型初始值
     uint8[8] public _staticArray; // 所有成员设为其默认值的静态数组[0,0,0,0,0,0,0,0]
-    uint[] public _dynamicArray; // []
-    mapping(uint => address) public _mapping; // 所有元素都为其默认值的mapping
+    uint256[] public _dynamicArray; // []
+    mapping(uint256 => address) public _mapping; // 所有元素都为其默认值的mapping
     struct Student {
-        uint id;
+        uint256 id;
         string name;
     }
     Student public _student; // 所有成员都设为其默认值的结构体
